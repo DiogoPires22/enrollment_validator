@@ -2,14 +2,14 @@
 
 [![N|Solid](https://api.travis-ci.org/DiogoPires22/enrollment_validator.svg?branch=master)](#)
 
-This is my solution for [problem](/problem.txt)
+This is my solution for the [problem](/problem.txt)
 
 ### Building and Installing
 
 This project requires [Maven](https://maven.apache.org/) and [JavaSDK](http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html) to run.
 
 
-Clone project and enter inside directory
+Clone project and go to project directory
 ```sh
 $ git clone https://github.com/DiogoPires22/enrollment_validator.git
 
@@ -24,7 +24,7 @@ The target directory will be created
 ### Run Project
 
 
-To run the project after compile use this command
+To run the project after compiled use this command
 ```sh
 cd /target/
 java -jar enrollment_validator-1.0.jar {path where the files are}
