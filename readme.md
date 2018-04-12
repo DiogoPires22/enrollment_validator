@@ -9,15 +9,15 @@ This is my solution for [problem](/problem.txt)
 This project requires [Maven](https://maven.apache.org/) and [JavaSDK](http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html) to run.
 
 To compile the project use this command
-sh
+```sh
 $ mvn compile
-
+```
 The target directory will be created
 ### Run Project
 After compile go to target directory
-sh
+```sh
 $ cd target
-
+```
 
 and run this command
 ```sh
@@ -31,6 +31,7 @@ java -jar enrollment_validator-1.0.jar /Users/diogosilva/Desktop/resources/
 
 ### Run Test
 To run unit test use
+
 ```sh
 $ mvn test
 ```
