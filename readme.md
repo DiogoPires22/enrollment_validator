@@ -4,29 +4,33 @@
 
 This is my solution for [problem](/problem.txt)
 
-### Compile
+### Building and Installing
 
 This project requires [Maven](https://maven.apache.org/) and [JavaSDK](http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html) to run.
 
+
+Clone project and enter inside directory
+```sh
+$ git clone https://github.com/DiogoPires22/enrollment_validator.git
+
+$ cd enrollment_validator
+```
 To compile the project use this command
 ```sh
 $ mvn compile
 ```
 The target directory will be created
 ### Run Project
-After compile go to target directory
-```sh
-$ cd target
-```
 
-and run this command
+
+To run the project after compile use this command
 ```sh
-java -jar enrollment_validator-1.0.jar {path where the files are}
+java -jar /target/enrollment_validator-1.0.jar {path where the files are}
 ```
 
 Example
 ```sh
-java -jar enrollment_validator-1.0.jar /Users/diogosilva/Desktop/resources/
+java -jar /target/enrollment_validator-1.0.jar /Users/diogosilva/Desktop/resources/
 ```
 
 ### Run Test
