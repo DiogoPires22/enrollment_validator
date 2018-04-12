@@ -2,7 +2,7 @@
 
 [![N|Solid](https://api.travis-ci.org/DiogoPires22/enrollment_validator.svg?branch=master)](#)
 
-This is my solution for problem
+This is my solution for [problem](/problem.txt)
 
 ### Compile
 
@@ -20,20 +20,20 @@ $ cd target
 
 
 and run this command
-sh
+```sh
 java -jar enrollment_validator-1.0.jar {path where the files are}
-
+```
 
 Example
-sh
+```sh
 java -jar enrollment_validator-1.0.jar /Users/diogosilva/Desktop/resources/
-
+```
 
 ### Run Test
-To run unit test use this command
-sh
+To run unit test use
+```sh
 $ mvn test
-
+```
 
 
 
