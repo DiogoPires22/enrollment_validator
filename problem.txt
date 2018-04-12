@@ -1,5 +1,3 @@
-Você deve desenvolver um programa em C# (ou Java ou Angular) que calcule o dígito verificador para uma série de matrículas da empresa XPTO.
-
 Dada uma matrícula de 0000 a 9999 o cálculo do dígito verificador deverá ser feito multiplicando o primeiro número a esquerda por 5, o segundo por 4, o terceiro por 3 e o quarto por 2. O resultado parcial de cada posição deve ser somado e o resultado final da soma deverá ser dividido por 16. O resto desta divisão deverá ser convertido para hexadecimal, sendo este então o dígito verificador.
 
 Exemplo: matrícula = 9876
