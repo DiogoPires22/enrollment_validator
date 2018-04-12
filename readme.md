@@ -15,9 +15,10 @@ $ git clone https://github.com/DiogoPires22/enrollment_validator.git
 
 $ cd enrollment_validator
 ```
-To compile the project use this command
+To compile the project use these commands
 ```sh
 $ mvn compile
+$ mvn package
 ```
 The target directory will be created
 ### Run Project
@@ -25,7 +26,8 @@ The target directory will be created
 
 To run the project after compile use this command
 ```sh
-java -jar /target/enrollment_validator-1.0.jar {path where the files are}
+cd /target/
+java -jar enrollment_validator-1.0.jar {path where the files are}
 ```
 
 Example

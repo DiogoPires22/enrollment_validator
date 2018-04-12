@@ -13,8 +13,8 @@ import java.util.stream.IntStream;
 public class
 EnrollmentBusiness {
 
-    private final int _maxMult = 5;
-    private final int _divisor = 16;
+    private final int MAX_MULT = 5;
+    private final int DIVISOR = 16;
 
     /**
      * Return a string enrollment complete with validator code, when don't match pattern throws a Exception
@@ -24,22 +24,27 @@ EnrollmentBusiness {
      * @see throw exception if text not match to regular expression
      */
     public String generateEnrollmentWithValidatorCode(String enrollmentWithoutValidator) throws Exception {
+
+        //if the string not match throw exception (need 4 number 0-9)
         if (!Pattern.compile("^[0-9]{4}$").matcher(enrollmentWithoutValidator).find()) {
             throw new Exception("Code not match pattern");
         }
 
-        int auxCount;
+
 //        for (int i = 0; i < enrollmentWithoutValidator.length(); i++) {
 //            auxCount += Integer.parseInt(enrollmentWithoutValidator.charAt(i) + "") * (_maxMult - i);
 //        }
 
+        //get each string character on string
         String[] stringArr = enrollmentWithoutValidator.split("");
 
-        auxCount = IntStream.range(0, stringArr.length)
-                .mapToObj(index -> Integer.parseInt(stringArr[index]) * (_maxMult - index))
+        // generate a sum  elements transformed with condition of the problem
+        int auxCount = IntStream.range(0, stringArr.length)
+                .mapToObj(index -> Integer.parseInt(stringArr[index]) * (MAX_MULT - index))
                 .reduce(0, Integer::sum);
 
-        String hexString = ConvertionHelper.intToHexString(auxCount % _divisor).toUpperCase();
+        //convert module of division to hexadecimal
+        String hexString = ConvertionHelper.intToHexString(auxCount % DIVISOR).toUpperCase();
 
         return String.format("%s-%s", enrollmentWithoutValidator, hexString);
 
@@ -54,22 +59,14 @@ EnrollmentBusiness {
      * @see throw exception if text not match to regular expression
      */
     boolean validateEnrollment(String enrollmentWithValidator) throws Exception {
+        //if the string not match throw exception (need 4 number 0-9) and the DV (hexadecimal string)
         if (!Pattern.compile("^[0-9]{4}-[a-fA-F0-9]$").matcher(enrollmentWithValidator).find()) {
             throw new Exception("Code not match pattern");
         }
-
+        //split string [enrollment without DV,DV]
         String[] splitString = enrollmentWithValidator.split("-");
 
-        int auxCount = 0;
-
-        String[] stringArr = splitString[0].split("");
-
-        auxCount = IntStream.range(0, stringArr.length)
-                .mapToObj(index -> Integer.parseInt(stringArr[index]) * (_maxMult - index))
-                .reduce(0, Integer::sum);
-
-        String hexString = ConvertionHelper.intToHexString(auxCount % _divisor).toUpperCase();
-
-        return splitString[1].equals(hexString);
+        //compare the value generated is equal
+        return enrollmentWithValidator.equals(generateEnrollmentWithValidatorCode(splitString[0]));
     }
 }
