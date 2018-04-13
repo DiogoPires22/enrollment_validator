@@ -1,6 +1,6 @@
 # Enrollment Validator
 
-[![N|Solid](https://api.travis-ci.org/DiogoPires22/enrollment_validator.svg?branch=master)](#)
+[![Build Status](https://travis-ci.org/DiogoPires22/enrollment_validator.svg?branch=master)](https://travis-ci.org/DiogoPires22/enrollment_validator)
 
 This is my solution for the [problem](/problem.txt)
 
